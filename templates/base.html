@@ -15,15 +15,18 @@
                 <li {% if section == "user_page" %}class="selected"{% endif %}>
                     <a href="{% url "user_page" %}">Моя страница</a>
                 </li>
-                <li {% if section == "images" %}class="selected"{% endif %}>
+                <li {% if section == "jobs" %}class="selected"{% endif %}>
                     <a href="#">Вакансии</a>
                 </li>
             </ul>
         {% endif %}
     <span class="user">
         {% if request.user.is_authenticated %}
-        Привет {{ request.user.first_name }},
+        Привет {{ request.user.first_name }}
+            <div>
             <a href="{% url "logout" %}">Выйти из аккаунта</a>
+            <a href="{% url "password_change" %}">Сменить пароль</a>
+            </div>
         {% else %}
             <a href="{% url "login" %}">Войти в систему</a>
         {% endif %}
