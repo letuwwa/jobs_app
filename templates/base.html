@@ -11,6 +11,10 @@
     <div id="header">
         <span class="logo">JOBS!</span>
     </div>
+    <div id="inline">
+        <a href="{% url 'login' %}">Login</a>
+        <a href="{% url 'logout' %}">Logout</a>
+    </div>
 <div id="content">
     {% block content %}
     {% endblock %}
