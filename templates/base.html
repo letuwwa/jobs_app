@@ -10,12 +10,26 @@
 <body>
     <div id="header">
         <span class="logo">JOBS!</span>
+        {% if request.user.is_authenticated %}
+            <ul class="menu">
+                <li {% if section == "user_page" %}class="selected"{% endif %}>
+                    <a href="{% url "user_page" %}">Моя страница</a>
+                </li>
+                <li {% if section == "images" %}class="selected"{% endif %}>
+                    <a href="#">Вакансии</a>
+                </li>
+            </ul>
+        {% endif %}
+    <span class="user">
+        {% if request.user.is_authenticated %}
+        Привет {{ request.user.first_name }},
+            <a href="{% url "logout" %}">Выйти из аккаунта</a>
+        {% else %}
+            <a href="{% url "login" %}">Войти в систему</a>
+        {% endif %}
+    </span>
     </div>
-    <div id="inline">
-        <a href="{% url 'login' %}">Login</a>
-        <a href="{% url 'logout' %}">Logout</a>
-    </div>
-<div id="content">
+    <div id="content">
     {% block content %}
     {% endblock %}
 </div>
