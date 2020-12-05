@@ -2,5 +2,12 @@
 {% block title %}Моя страница{% endblock %}
 {% block content %}
     <h1>Персональная страница</h1>
+    {% if request.user.is_authenticated %}
+            <ul class="menu">
+                <li {% if section == "edit" %}class="selected"{% endif %}>
+                    <a href="{% url "edit" %}">Изменить данные</a>
+                </li>
+            </ul>
+    {% endif %}
     <p>Очень интересный текст</p>
 {% endblock %}
