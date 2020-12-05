@@ -20,6 +20,11 @@
                         <a href="#">Вакансии</a>
                     </li>
                 {% endif %}
+                {% if request.user.profile.user_role == 'Рекрутер' %}
+                    <li {% if section == "reports" %}class="selected"{% endif %}>
+                        <a href="#">Отклики</a>
+                    </li>
+                {% endif %}
             </ul>
         {% endif %}
     <span class="user">
