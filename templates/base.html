@@ -15,9 +15,11 @@
                 <li {% if section == "user_page" %}class="selected"{% endif %}>
                     <a href="{% url "user_page" %}">Моя страница</a>
                 </li>
-                <li {% if section == "jobs" %}class="selected"{% endif %}>
-                    <a href="#">Вакансии</a>
-                </li>
+                {% if request.user.profile.user_role == 'Пользователь' %}
+                    <li {% if section == "jobs" %}class="selected"{% endif %}>
+                        <a href="#">Вакансии</a>
+                    </li>
+                {% endif %}
             </ul>
         {% endif %}
     <span class="user">
