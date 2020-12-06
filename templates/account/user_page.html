@@ -7,6 +7,9 @@
                 <li {% if section == "edit" %}class="selected"{% endif %}>
                     <a href="{% url "edit" %}">Изменить данные</a>
                 </li>
+                <li {% if section == "cv_create" %}class="selected"{% endif %}>
+                    <a href="{% url "cv_create" %}">Создать резюме</a>
+                </li>
             </ul>
     {% endif %}
     <p>Очень интересный текст</p>
