@@ -17,6 +17,11 @@
             Сохранить
           {% endif %}
         </button>
+      {% if form.instance.id %}
+      <a href="{% url 'cv_delete' form.instance.id %}">
+        Удалить
+      </a>
+    {% endif %}
       </p>
     </form>
   </div>

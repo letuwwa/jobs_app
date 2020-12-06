@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views.generic import (
     ListView,
     CreateView,
@@ -38,3 +39,11 @@ class CVDetail(DetailView):
     model = CVModel
     template_name = 'cv/cv_detail.html'
     context_object_name = 'cv'
+
+
+class CVDelete(DeleteView):
+    model = CVModel
+    # при успешном удалении редиректим на....
+    success_url = reverse_lazy('cv_list')
+    # указываем шаблон для страницы подтверждения удаления
+    template_name = 'confirm_delete.html'

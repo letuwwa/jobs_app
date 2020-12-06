@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}
+  Удаление продукта
+{% endblock %}
+{% block content %}
+  <div class="col-lg-6 offset-3">
+    <form id="confirm_delete" method="post" >
+      {% csrf_token %}
+      Вы действительно хотите удалить резюме "{{ object.position }}"?
+      <input type="submit" value="Ок" />
+      <a href="{% url 'cv_update' object.id %}">Отмена</a>
+    </form>
+  </div>
+{% endblock %}

@@ -4,9 +4,11 @@
 {% endblock %}
 
 {% block content %}
-  <div class="col-lg-4">
-    <a class="my_class" href="{% url 'cv_update' cv.id %}">
-     {{ cv.position }}
-    </a>
-  </div>
+    <div class="card" style="width: 25rem;">
+        {{ cv.position }}
+        <div class="col-lg-4"><a class="my_class" href="{% url 'cv_update' cv.id %}">
+            Изменить
+        </a>
+      </div>
+    </div>
 {% endblock %}
