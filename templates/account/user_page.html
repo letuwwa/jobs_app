@@ -10,6 +10,9 @@
                 <li {% if section == "cv_create" %}class="selected"{% endif %}>
                     <a href="{% url "cv_create" %}">Создать резюме</a>
                 </li>
+                <li {% if section == "cv_list" %}class="selected"{% endif %}>
+                    <a href="{% url "cv_list" %}">Просмотреть резюме</a>
+                </li>
             </ul>
     {% endif %}
     <p>Очень интересный текст</p>

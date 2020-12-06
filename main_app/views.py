@@ -26,3 +26,15 @@ class CVUpdate(UpdateView):
     template_name = 'cv/cv_create.html'
     model = CVModel
     form_class = CVModelForm
+
+
+class CVListView(ListView):
+    template_name = 'cv/cv_list.html'
+    model = CVModel
+    context_object_name = 'cv_list'
+
+
+class CVDetail(DetailView):
+    model = CVModel
+    template_name = 'cv/cv_detail.html'
+    context_object_name = 'cv'
