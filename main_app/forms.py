@@ -7,4 +7,4 @@ from .models import (
 class CVModelForm(forms.ModelForm):
     class Meta:
         model = CVModel
-        fields = ('position', )
+        fields = ('position', 'salary', 'personal_info', 'skills', 'selected_language')

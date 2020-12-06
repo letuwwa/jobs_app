@@ -7,12 +7,17 @@
 {% block content %}
   {% for cv in cv_list %}
       {% if cv.created_by.username == user.username %}
-        <div class="card col-lg-4" style="width: 18rem;">
+        <div class="card col-lg-4" style="width: 25rem;">
           <div class="card-body">
             <h5 class="card-title">
               <a href="{% url 'cv_detail' cv.id %}">
                 {{ cv.position }}
               </a>
+                <div>
+                    <small>{{ cv.personal_info }}</small>
+                    <p></p>
+                    <small>{{ cv.date }}</small>
+                </div>
             </h5>
           </div>
         </div>

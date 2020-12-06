@@ -7,12 +7,22 @@
                 <li {% if section == "edit" %}class="selected"{% endif %}>
                     <a href="{% url "edit" %}">Изменить данные</a>
                 </li>
+            {% if request.user.profile.user_role == 'Пользователь' %}
                 <li {% if section == "cv_create" %}class="selected"{% endif %}>
                     <a href="{% url "cv_create" %}">Создать резюме</a>
                 </li>
                 <li {% if section == "cv_list" %}class="selected"{% endif %}>
                     <a href="{% url "cv_list" %}">Просмотреть резюме</a>
                 </li>
+            {% endif %}
+            {% if request.user.profile.user_role == 'Рекрутер' %}
+                <li {% if section == "job_create" %}class="selected"{% endif %}>
+                    <a href="#">Создать вакансию</a>
+                </li>
+                <li {% if section == "job_list" %}class="selected"{% endif %}>
+                    <a href="#">Просмотреть вакансии</a>
+                </li>
+            {% endif %}
             </ul>
     {% endif %}
     <p>Очень интересный текст</p>
