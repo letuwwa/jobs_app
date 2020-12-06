@@ -6,14 +6,16 @@
 
 {% block content %}
   {% for cv in cv_list %}
-    <div class="card col-lg-4" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title">
-          <a href="{% url 'cv_detail' cv.id %}">
-            {{ cv.position }}
-          </a>
-        </h5>
-      </div>
-    </div>
+      {% if cv.created_by.username == user.username %}
+        <div class="card col-lg-4" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">
+              <a href="{% url 'cv_detail' cv.id %}">
+                {{ cv.position }}
+              </a>
+            </h5>
+          </div>
+        </div>
+      {% endif %}
   {% endfor %}
 {% endblock %}

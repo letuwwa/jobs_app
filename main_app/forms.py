@@ -7,4 +7,4 @@ from .models import (
 class CVModelForm(forms.ModelForm):
     class Meta:
         model = CVModel
-        fields = '__all__'
+        fields = ('position', )
