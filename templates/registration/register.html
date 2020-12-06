@@ -1,12 +1,14 @@
 {% extends "base.html" %}
+{% load crispy_forms_filters %}
+
 {% block title %}
-    Create an account
+    Регистрация
 {% endblock %}
 {% block content %}
     <h1>Создать аккаунт</h1>
     <p>Пожалуйста, введите ваши данные в поля ниже:</p>
     <form method="post">
-        {{ user_form.as_p }}
+        {{ user_form|crispy  }}
         {% csrf_token %}
         <p><input type="submit" value="Создать аккаунт"></p>
     </form>

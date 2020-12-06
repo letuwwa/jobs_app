@@ -10,6 +10,18 @@
             {% block title %}
             {% endblock %}
         </title>
+    <style>
+       .layer1 {
+        position: relative; /* Относительное позиционирование */
+        background: #f0f0f0; /* Цвет фона */
+        height: 600px; /* Высота блока */
+       }
+       .layer2 {
+        position: relative; /* Абсолютное позиционирование */
+        bottom: 1px; /* Положение от нижнего края */
+        left: 10px; /* Положение от правого края */
+       }
+    </style>
     </head>
 <body>
     <div id="header">
@@ -44,8 +56,12 @@
     </span>
     </div>
     <div id="content">
-    {% block content %}
-    {% endblock %}
-</div>
+        <div class="layer1">
+            <div class="layer2">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
 </body>
 </html>

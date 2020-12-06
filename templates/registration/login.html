@@ -1,6 +1,7 @@
 {% extends "base.html" %}
+{% load crispy_forms_filters %}
 
-{% block title %}вход{% endblock %}
+{% block title %}Вход{% endblock %}
 
 {% block content %}
     <h1>Вход</h1>
@@ -14,7 +15,7 @@
     {% endif %}
         <div class="login-form">
             <form action="{% url 'login' %}" method="post">
-                {{ form.as_p }}
+                {{ form|crispy}}
                 {% csrf_token %}
                 <input type="hidden" name="next" value="{{ next }}" />
                  <p><input type="submit" value="Вход"></p>
