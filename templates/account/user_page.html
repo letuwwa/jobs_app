@@ -17,10 +17,10 @@
             {% endif %}
             {% if request.user.profile.user_role == 'Рекрутер' %}
                 <li {% if section == "job_create" %}class="selected"{% endif %}>
-                    <a href="#">Создать вакансию</a>
+                    <a href={% url "job_create" %}>Создать вакансию</a>
                 </li>
                 <li {% if section == "job_list" %}class="selected"{% endif %}>
-                    <a href="#">Просмотреть вакансии</a>
+                    <a href={% url "job_list" %}>Просмотреть вакансии</a>
                 </li>
             {% endif %}
             </ul>

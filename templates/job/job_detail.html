@@ -1,0 +1,14 @@
+{% extends "base.html"%}
+{% block title %}
+  Детализация по вакансии
+{% endblock %}
+
+{% block content %}
+    <div class="card" style="width: 25rem;">
+        {{ job.job_position }}
+        <div class="col-lg-4"><a class="my_class" href="{% url 'job_update' job.id %}">
+            Изменить
+        </a>
+      </div>
+    </div>
+{% endblock %}

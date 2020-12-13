@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load crispy_forms_filters %}
 {% block title %}
-  Создание резюме
+  Создание вакансии
 {% endblock %}
 {% block content %}
   <div class="col-lg-12">
@@ -18,7 +18,7 @@
           {% endif %}
         </button>
       {% if form.instance.id %}
-      <a href="{% url 'cv_delete' form.instance.id %}">
+      <a href="{% url 'job_delete' form.instance.id %}">
         Удалить
       </a>
     {% endif %}

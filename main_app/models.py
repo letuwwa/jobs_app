@@ -31,3 +31,15 @@ class CVModel(models.Model):
 
     def get_absolute_url(self):
         return reverse('cv_update', args=(self.id,))
+
+
+class JobModel(models.Model):
+    job_created_by = CurrentUserField(default=get_current_authenticated_user, blank=False)
+    job_date = models.DateTimeField(default=datetime.now, blank=False)
+    job_position = models.CharField(max_length=128, blank=False)
+    job_salary = models.PositiveIntegerField(blank=False, null=False)
+    about_worker = models.TextField()
+    skills = models.TextField()
+
+    def get_absolute_url(self):
+        return reverse('job_update', args=(self.id,))

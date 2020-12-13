@@ -9,8 +9,8 @@ from django.views.generic import (
     TemplateView,
     DetailView,
 )
-from .models import CVModel
-from .forms import CVModelForm
+from .models import CVModel, JobModel
+from .forms import CVModelForm, JobModelForm
 
 
 def index(request):
@@ -43,7 +43,35 @@ class CVDetail(DetailView):
 
 class CVDelete(DeleteView):
     model = CVModel
-    # при успешном удалении редиректим на....
     success_url = reverse_lazy('cv_list')
-    # указываем шаблон для страницы подтверждения удаления
+    template_name = 'confirm_delete.html'
+
+
+class JobCreate(CreateView):
+    template_name = 'job/job_create.html'
+    model = JobModel
+    form_class = JobModelForm
+
+
+class JobUpdate(UpdateView):
+    template_name = 'job/job_create.html'
+    model = JobModel
+    form_class = JobModelForm
+
+
+class JobListView(ListView):
+    template_name = 'job/job_list.html'
+    model = JobModel
+    context_object_name = 'job_list'
+
+
+class JobDetail(DetailView):
+    model = JobModel
+    template_name = 'job/job_detail.html'
+    context_object_name = 'job'
+
+
+class JobDelete(DeleteView):
+    model = JobModel
+    success_url = reverse_lazy('job_list')
     template_name = 'confirm_delete.html'
