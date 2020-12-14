@@ -33,7 +33,7 @@
                 </li>
                 {% if request.user.profile.user_role == 'Пользователь' %}
                     <li {% if section == "jobs" %}class="selected"{% endif %}>
-                        <a href="#">Вакансии</a>
+                        <a href="{% url "all_jobs_list" %}">Вакансии</a>
                     </li>
                 {% endif %}
                 {% if request.user.profile.user_role == 'Рекрутер' %}

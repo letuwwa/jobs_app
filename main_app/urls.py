@@ -9,6 +9,7 @@ urlpatterns = [
     path('cv_delete/<int:pk>/', CVDelete.as_view(), name='cv_delete'),
     path('job_create/', JobCreate.as_view(), name='job_create'),
     path('job_list/', JobListView.as_view(), name='job_list'),
+    path('all_jobs_list/', AllJobsListView.as_view(), name='all_jobs_list'),
     path('job_update/<int:pk>/', JobUpdate.as_view(), name='job_update'),
     path('job_detail/<int:pk>/', JobDetail.as_view(), name='job_detail'),
     path('job_delete/<int:pk>/', JobDelete.as_view(), name='job_delete'),

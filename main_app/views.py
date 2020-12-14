@@ -65,6 +65,12 @@ class JobListView(ListView):
     context_object_name = 'job_list'
 
 
+class AllJobsListView(ListView):
+    template_name = 'job/all_jobs.html'
+    model = JobModel
+    context_object_name = 'job_list'
+
+
 class JobDetail(DetailView):
     model = JobModel
     template_name = 'job/job_detail.html'
